@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">POS</string>
+    <string name="add_note">Tambah Barang</string>
+    <string name="success_clear">Succes Clear Data</string>
+    <string name="clear_note">Clear barang</string>
+    <string name="manajemen_barang">Manajemen Barang</string>
+    <string name="manajemen_transaksi">Manajemen Transaksi</string>
+</resources>

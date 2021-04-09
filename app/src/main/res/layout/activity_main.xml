@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.MainActivity">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+   <Button
+       android:id="@+id/btnAdm"
+       android:layout_width="200dp"
+       android:layout_height="50dp"
+       android:layout_gravity="center_horizontal"
+       android:layout_centerVertical="true"
+       android:layout_centerHorizontal="true"
+       android:text="Administrator"
+       />
+
+      <Button
+          android:id="@+id/btnkasir"
+          android:layout_width="200dp"
+          android:layout_height="50dp"
+          android:layout_gravity="center_horizontal"
+          android:layout_centerVertical="true"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="10dp"
+          android:layout_below="@id/btnAdm"
+          android:text="Kasir"
+          />
+
+   </RelativeLayout>
+
+</RelativeLayout>

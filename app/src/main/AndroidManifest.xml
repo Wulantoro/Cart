@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pos">
+
+    <application
+        android:name=".PosApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.POS">
+        <activity android:name=".UI.CheckoutActivity"></activity>
+        <activity android:name=".UI.ManageTransacActivity" />
+        <activity android:name=".UI.MenuAdminActivity" />
+        <activity android:name=".UI.TransactionActivity" />
+        <activity android:name=".UI.DetailActivity" />
+        <activity android:name=".UI.UpdateActivity" />
+        <activity android:name=".UI.KasirActivity" />
+        <activity android:name=".UI.AddBarangActivity" />
+        <activity android:name=".UI.AdminActivity" />
+        <activity android:name=".UI.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

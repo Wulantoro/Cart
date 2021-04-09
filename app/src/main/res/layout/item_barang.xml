@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name = "barang"
+            type="com.example.pos.Barang"
+        />
+    </data>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:layout_margin="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:id="@+id/student_icon"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="82dp"
+                    android:layout_centerVertical="true"
+                    android:background="#464545"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@id/student_icon"/>
+                <LinearLayout
+                    android:id="@+id/lldata"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_toRightOf="@id/student_icon">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvnamabrg"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text=""/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvhargabrg"
+                        android:layout_marginTop="4dp"
+                        tools:text=""/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvstock"
+                        android:layout_marginTop="4dp"
+                        tools:text="J"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/lldata"
+                    android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imghapus"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ic_baseline_delete_forever_24"/>
+
+                <ImageButton
+                    android:id="@+id/imgedit"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ic_baseline_create_24" />
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+</layout>

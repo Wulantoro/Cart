@@ -56,7 +56,8 @@ class KasirAdapter(
         holder.bindView(barangList[position])
         holder.itemView.tvnamabrg.text = barang.namabarang
 //        holder.itemView.product_selectedQuantity.text = barang.selectedQuantity.toString()
-        holder.itemView.tvhargabrg.text = Converter.rupiah(barang.hargabarang.toDouble())
+//        holder.itemView.tvhargabrg.text = Converter.rupiah(barang.hargabarang.toDouble())
+        holder.itemView.tvhargabrg.text = barang.hargabarang
 
         holder.itemView.cart_minus_img.setOnClickListener { v: View? ->
             if (barang.selectedQuantity > 0) barang.selectedQuantity  = barang.selectedQuantity - 1

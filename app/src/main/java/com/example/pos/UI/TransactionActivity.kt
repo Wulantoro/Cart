@@ -32,23 +32,8 @@ class TransactionActivity :  AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transaction)
 
-
-
 //        items = Objects.requireNonNull(this.intent.extras)?.getParcelableArrayList("cart")
-        items = intent.getParcelableArrayListExtra("cart")
 
-        val idbarang = intent.getStringExtra("cart")
-
-
-        Log.e("Tag", items.toString())
-
-//        val listHeroes = listOf(
-//            Barang(namabarang = "Thor", hargabarang = "", stockbarang = "1"),
-//            Barang(namabarang = "Captain America", hargabarang = "", stockbarang = "1"),
-//            Barang(namabarang = "Iron Man", hargabarang = "", stockbarang = "1")
-//        )
-
-//        val transactionAdapter = TransactionAdapter(listHeroes)
         val transactionAdapter = TransactionAdapter(items!!)
         rv_selected_product.apply {
             layoutManager = LinearLayoutManager(this@TransactionActivity)
@@ -56,20 +41,57 @@ class TransactionActivity :  AppCompatActivity() {
            transactionAdapter.notifyDataSetChanged()
         }
 
-//        mRecyclerView?.setLayoutManager(LinearLayoutManager(this))
-//        val adapter: TransactionAdapter = TransactionAdapter(items!!)
-//        mRecyclerView?.setAdapter(adapter)
-//        adapter.notifyDataSetChanged()
-
-        var price = 0
-        for (i in items!!) {
-            price += i.hargabarang.toInt() * i.selectedQuantity
-        }
-        totprice.setText("Rp. $price")
-
     }
 
 }
+
+
+//class TransactionActivity :  AppCompatActivity() {
+//
+//    private var items: ArrayList<Barang>? = null
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_transaction)
+//
+//
+//
+//        items = Objects.requireNonNull(this.intent.extras)?.getParcelableArrayList("cart")
+////        items = intent.getParcelableArrayListExtra("cart")
+//
+//        val idbarang = intent.getStringExtra("cart")
+//
+//
+//        Log.e("Tag", items.toString())
+//
+////        val listHeroes = listOf(
+////            Barang(namabarang = "Thor", hargabarang = "", stockbarang = "1"),
+////            Barang(namabarang = "Captain America", hargabarang = "", stockbarang = "1"),
+////            Barang(namabarang = "Iron Man", hargabarang = "", stockbarang = "1")
+////        )
+//
+////        val transactionAdapter = TransactionAdapter(listHeroes)
+//        val transactionAdapter = TransactionAdapter(items!!)
+//        rv_selected_product.apply {
+//            layoutManager = LinearLayoutManager(this@TransactionActivity)
+//            adapter = transactionAdapter
+//           transactionAdapter.notifyDataSetChanged()
+//        }
+//
+////        mRecyclerView?.setLayoutManager(LinearLayoutManager(this))
+////        val adapter: TransactionAdapter = TransactionAdapter(items!!)
+////        mRecyclerView?.setAdapter(adapter)
+////        adapter.notifyDataSetChanged()
+//
+//        var price = 0
+//        for (i in items!!) {
+//            price += i.hargabarang.toInt() * i.selectedQuantity
+//        }
+//        totprice.setText("Rp. $price")
+//
+//    }
+//
+//}
 
 
 //@AndroidEntryPoint

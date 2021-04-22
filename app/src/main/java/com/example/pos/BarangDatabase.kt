@@ -8,7 +8,7 @@ import com.example.pos.Model.Keranjang
 
 
 @Database(
-    entities = [Barang::class, Keranjang::class], version = 5, exportSchema = false
+    entities = [Barang::class, Keranjang::class], version = 6, exportSchema = false
 
 )
 abstract class BarangDatabase : RoomDatabase() {

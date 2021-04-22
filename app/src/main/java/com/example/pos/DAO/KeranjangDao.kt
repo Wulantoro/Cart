@@ -13,8 +13,15 @@ import io.reactivex.Flowable
 @Dao
 interface KeranjangDao {
 
+//    @Insert(onConflict = REPLACE)
+//    fun insertBatch(keranjang... Keranjang)
+
     @Insert(onConflict = REPLACE)
     fun tambahKeranjang(keranjang: Keranjang)
+
+    @Insert(onConflict = REPLACE)
+    fun insertAll(vararg entity: Keranjang)
+
 
     @Query("UPDATE keranjang SET idbarangk =:idbarangk, jumlahbelanja=:jumlahbelanja, total=:total WHERE idkeranjang =:idkeranjang")
     fun updateKeranjang(idkeranjang: Long, idbarangk:Long, jumlahbelanja: Long, total: Long)

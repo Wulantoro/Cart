@@ -34,6 +34,9 @@ public class KasirActivityViewModel @ViewModelInject constructor(private val bar
         keranjangRepository.insertKeranjang(keranjang)
     }
 
+
+
+
     fun addSelectedProduct(barang: Barang){
         val tempSelectedProducts : MutableList<Barang> = if (selectedProduct.value == null){
             mutableListOf()

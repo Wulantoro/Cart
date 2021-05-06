@@ -7,8 +7,8 @@
 
     <data>
         <variable
-            name="barang"
-            type="com.example.pos.Barang" />
+            name="keranjang"
+            type="com.example.pos.Model.Keranjang" />
     </data>
 
 <RelativeLayout
@@ -18,145 +18,10 @@
     android:padding="24dp"
     tools:showIn="@layout/activity_transaction">
 
-
-<!--    <androidx.core.widget.NestedScrollView-->
-<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:id="@+id/bottomsheet_detail_order"-->
-<!--        android:clickable="true"-->
-<!--        android:background="#fff"-->
-<!--        app:layout_behavior="@string/bottom_sheet_behavior"-->
-<!--        app:behavior_peekHeight="0dp"-->
-<!--        app:behavior_hideable="true">-->
-
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-<!--            <LinearLayout-->
-<!--                android:orientation="vertical"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-
-<!--                <TextView-->
-<!--                    android:padding="8dp"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:text="Keranjang belanja"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-
-<!--                <androidx.recyclerview.widget.RecyclerView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:id="@+id/rv_selected_product"-->
-<!--                    android:layout_height="match_parent"/>-->
-
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content">-->
-
-
-<!--                <TextView-->
-<!--                    android:id="@+id/subtotal"-->
-<!--                    android:layout_marginTop="32dp"-->
-<!--                    android:textAlignment="textStart"-->
-<!--                    android:text="Subtotal"-->
-<!--                    android:padding="8dp"-->
-<!--                    android:textSize="20sp"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content" />-->
-
-<!--                <TextView-->
-<!--                    android:padding="8dp"-->
-<!--                    android:id="@+id/totprice"-->
-<!--                    android:layout_marginTop="32dp"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    tools:text="$50"-->
-<!--                    android:textSize="20sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:textAlignment="textEnd"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content" />-->
-
-<!--                </RelativeLayout>-->
+    
 
 
 
-<!--            </LinearLayout>-->
-
-
-<!--        </RelativeLayout>-->
-
-<!--    </androidx.core.widget.NestedScrollView>-->
-
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/cv"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        >-->
-
-<!--        <LinearLayout-->
-<!--            android:id="@+id/rltrans"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical"-->
-<!--            android:gravity="center_horizontal">-->
-
-
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView2"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="12dp"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                app:srcCompat="@mipmap/ic_launcher" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/textViewName"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_below="@id/imageView2"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:text="@{barang.namabarang}"-->
-<!--                android:textSize="18sp"-->
-<!--                android:textStyle="bold"-->
-<!--                tools:text="Nama Muh rahmatullah" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tvhargabrg"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textSize="14sp"-->
-<!--                android:layout_below="@id/textViewName"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="@{barang.hargabarang}"-->
-<!--                tools:text="Nama Muh rahmatullah" />-->
-
-<!--            <include-->
-
-<!--                layout="@layout/number_picker"-->
-<!--                />-->
-
-
-
-<!--&lt;!&ndash;             <de.starkling.shoppingcart.widget.CounterView&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:id="@+id/counterView"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_below="@id/tvhargabrg"&ndash;&gt;-->
-<!--&lt;!&ndash;                 android:layout_marginTop="10dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_centerHorizontal="true"&ndash;&gt;-->
-<!--&lt;!&ndash;                    />&ndash;&gt;-->
-<!--        </LinearLayout>-->
-
-
-
-<!--    </androidx.cardview.widget.CardView>-->
 
 
 

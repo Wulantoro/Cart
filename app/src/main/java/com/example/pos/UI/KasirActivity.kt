@@ -127,8 +127,8 @@ import kotlinx.android.synthetic.main.number_picker.*
 //           val coba = "coba coba"
 
 
-            val item = selected as ArrayList<Barang>
-            val intent = Intent(this, TransactionActivity::class.java)
+//            val item = selected as ArrayList<Barang>
+//            val intent = Intent(this, TransactionActivity::class.java)
 //            val intent = Intent(this, TransactionActivity::class.java).apply {
 //                val b = Bundle()
 //                b.putParcelableArrayList("cart", item)
@@ -137,9 +137,9 @@ import kotlinx.android.synthetic.main.number_picker.*
 //            val b = Bundle()
 //            b.putParcelableArrayList("cart", item)
 //            intent.putExtras(b)
-            startActivity(intent)
+//            startActivity(intent)
 
-           Log.e("TAG", "item = " + item.toString())
+//           Log.e("TAG", "item = " + item.toString())
         }
     }
 

@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.example.pos.Barang
 import com.example.pos.BarangRepository
-import com.example.pos.Model.Keranjang
+import com.example.pos.Keranjang
 import com.example.pos.Repo.KeranjangRepository
 
 public class KasirActivityViewModel @ViewModelInject constructor(private val barangRepository: BarangRepository, private val keranjangRepository: KeranjangRepository) : BaseViewModel() {

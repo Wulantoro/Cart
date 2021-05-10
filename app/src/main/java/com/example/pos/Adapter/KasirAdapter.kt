@@ -1,30 +1,18 @@
 package com.example.pos.Adapter
 
 import android.content.Context
-import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import androidx.lifecycle.ProcessLifecycleOwner.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pos.Barang
-import com.example.pos.Model.Keranjang
-import com.example.pos.UI.TransactionActivity
-import com.example.pos.Utils.Converter
+import com.example.pos.Keranjang
 import com.example.pos.ViewModel.KasirActivityViewModel
 import com.example.pos.databinding.ItemBarangKasirBinding
-import kotlinx.android.synthetic.main.activity_kasir.view.*
-import kotlinx.android.synthetic.main.item_barang.view.*
 import kotlinx.android.synthetic.main.item_barang.view.tvhargabrg
 import kotlinx.android.synthetic.main.item_barang.view.tvnamabrg
 import kotlinx.android.synthetic.main.item_barang_kasir.view.*
-import kotlinx.android.synthetic.main.number_picker.view.*
-import java.lang.String
 
-import java.lang.reflect.Array.set
 import java.util.ArrayList
 
 

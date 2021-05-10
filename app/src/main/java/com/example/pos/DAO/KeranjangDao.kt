@@ -1,13 +1,9 @@
 package com.example.pos.DAO
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
+import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
-import androidx.room.Query
-import com.example.pos.Barang
 
-import com.example.pos.Model.Keranjang
+import com.example.pos.Keranjang
 import io.reactivex.Flowable
 
 @Dao
@@ -19,20 +15,33 @@ interface KeranjangDao {
     @Insert(onConflict = REPLACE)
     fun tambahKeranjang(keranjang: Keranjang)
 
-    @Insert(onConflict = REPLACE)
-    fun insertAll(vararg entity: Keranjang)
+//    @Insert(onConflict = REPLACE)
+//    fun insertAll(vararg entity: Keranjang)
 
 
-    @Query("UPDATE keranjang SET idbarangk =:idbarangk, jumlahbelanja=:jumlahbelanja, total=:total WHERE idkeranjang =:idkeranjang")
-    fun updateKeranjang(idkeranjang: Long, idbarangk:Long, jumlahbelanja: Long, total: Long)
+    @Query("UPDATE keranjang SET jumlahbelanja=:jumlahbelanja, total=:total WHERE idkeranjang =:idkeranjang")
+    fun updateKeranjang(idkeranjang: Long, jumlahbelanja: Long, total: Long)
 
     @Delete
     fun deleteKeranjang(keranjang: Keranjang)
 
-    @Query("SELECT * from keranjang ORDER BY idkeranjang DESC LIMIT 1")
+    @Query("SELECT * from keranjang ")
     fun getAll(): Flowable<List<Keranjang>>
 
     @Query("SELECT * FROM keranjang WHERE idkeranjang = :idkeranjang ")
     fun getById(idkeranjang: Long) : Flowable<Keranjang>
+
+
+    /*************************/
+    @Transaction
+    open fun updateData(keranjangs: List<Keranjang>) {
+
+        insertAll(keranjangs)
+    }
+    @Insert
+     fun insertAll(keranjang: List<Keranjang>)
+
+
+//     fun multipleInsert(List<Keranjang>)
 
 }

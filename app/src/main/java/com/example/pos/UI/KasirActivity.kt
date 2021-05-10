@@ -1,17 +1,11 @@
 package com.example.pos.UI
 
-import android.annotation.SuppressLint
-import android.content.DialogInterface
+import android.content.Context
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pos.*
@@ -20,11 +14,11 @@ import com.example.pos.Adapter.KeranjangAdapter
 import com.example.pos.Base.BaseActivity
 import com.example.pos.Barang
 import com.example.pos.DAO.KeranjangDao
-import com.example.pos.Model.Keranjang
+import com.example.pos.Keranjang
 import com.example.pos.Utils.Converter
 import com.example.pos.ViewModel.KasirActivityViewModel
+import com.example.pos.ViewModel.TransactionViewModel
 import com.example.pos.databinding.ActivityKasirBinding
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_admin.*
 import kotlinx.android.synthetic.main.activity_kasir.*
@@ -57,6 +51,10 @@ import kotlinx.android.synthetic.main.number_picker.*
     lateinit var kasirAdapter: KasirAdapter
 
     private val viewModel: KasirActivityViewModel by viewModels()
+
+    private val transacViewMode: TransactionViewModel by viewModels()
+
+
 
 //     abstract val keranjangDao: KeranjangDao
 
@@ -103,109 +101,33 @@ import kotlinx.android.synthetic.main.number_picker.*
 
 
         btn_checkout.setOnClickListener { view: View? ->
+            insert()
+            val intent = Intent(this, TransactionActivity::class.java)
 
-            InsertCartItem().execute()
-
-
-
-//
-//            val  tvhargabrg = tvhargabrg.text
-//            val cart_product_quantity_tv = cart_product_quantity_tv.text
-//            val jumlahbelanja = tvhargabrg.toString().toLong() *  cart_product_quantity_tv.toString().toLong()
-
-//            Toast.makeText(this, "jumlah belanja = " + jumlahbelanja, Toast.LENGTH_LONG).show()
+            startActivity(intent)
 
 
 
-
-//           val listHeroes = listOf(
-//            Barang(namabarang = "Thor", hargabarang = "", stockbarang = "1"),
-//            Barang(namabarang = "Captain America", hargabarang = "", stockbarang = "1"),
-//            Barang(namabarang = "Iron Man", hargabarang = "", stockbarang = "1")
-//        )
-//
-//           val coba = "coba coba"
-
-
-//            val item = selected as ArrayList<Barang>
-//            val intent = Intent(this, TransactionActivity::class.java)
-//            val intent = Intent(this, TransactionActivity::class.java).apply {
-//                val b = Bundle()
-//                b.putParcelableArrayList("cart", item)
-//                intent.putExtras(b)
-//            }
-//            val b = Bundle()
-//            b.putParcelableArrayList("cart", item)
-//            intent.putExtras(b)
-//            startActivity(intent)
-
-//           Log.e("TAG", "item = " + item.toString())
         }
+
+
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private inner class InsertCartItem : AsyncTask<Void?, Void?, Void?>() {
-        override fun doInBackground(vararg voids: Void?): Void? {
+    fun insert() {
+        val tvnamabrg = tvnamabrg.text.toString()
+            val tvhargabrg = tvhargabrg.text.toString()
+            val cart_product_quantity_tv = cart_product_quantity_tv.text.toString()
+            val total = tvhargabrg.toString().toLong() * cart_product_quantity_tv.toLong()
 
-            val tvhargabrg = tvhargabrg.text
-            val cart_product_quantity_tv = cart_product_quantity_tv.text
-            val jumlahbelanja =
-                tvhargabrg.toString().toLong() * cart_product_quantity_tv.toString().toLong()
+            transacViewMode.insertKeranjang(Keranjang( cart_product_quantity_tv.toLong(), total, 0, tvnamabrg ))
+            applicationContext.toast("Data berhasil dimasukkan")
 
-            for (i in barangs!!) {
-                val k = Keranjang()
-                k.idbarangk = i.idbarang.toInt()
-                k.checkout = 0
-                k.total = cart_product_quantity_tv.toString().toInt()
-                k.jumlahbelanja = jumlahbelanja.toInt()
+        val intent = Intent(this, TransactionActivity::class.java)
 
-//                keranjangDao.insertAll(k)
+        startActivity(intent)
 
-
-
-                viewModel.transaksi(k)
-
-            }
-
-            return null
-        }
-
-        override fun onPostExecute(aVoid: Void?) {
-            super.onPostExecute(aVoid)
-            Toast.makeText(this@KasirActivity, "Order Placed Successfully", Toast.LENGTH_SHORT)
-                .show()
-
-//            val intent = Intent(this, TransactionActivity::class.java)
-////
-//            startActivity(intent)
-
-
-//            finish()
-        }
     }
-//
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-////        menuInflater.inflate(R.menu.main_menu, menu)
-////        return super.onCreateOptionsMenu(menu)
-//
-//        val inflater = menuInflater
-//        inflater.inflate(R.menu.main_menu, menu)
-//        return super.onCreateOptionsMenu(menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        val id = item.itemId
-//        if (id == R.id.cart) {
-//            val item1 = selected as java.util.ArrayList<Barang>
-//            val intent = Intent(this, TransactionActivity::class.java)
-//            val b = Bundle()
-//            b.putParcelableArrayList("cart", item1)
-//            intent.putExtras(b)
-//            startActivity(intent)
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
 
 
     init {
@@ -218,6 +140,10 @@ import kotlinx.android.synthetic.main.number_picker.*
         super.onResume()
         viewModel.loadbarang()
 
+    }
+
+    fun Context.toast(message:CharSequence) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 }

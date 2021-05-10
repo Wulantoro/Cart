@@ -25,7 +25,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -42,8 +42,9 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:id="@+id/rv_selected_product"
-                        android:layout_height="match_parent"/>
+                        tools:listitem="@layout/content_transaction"/>
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -85,8 +86,8 @@
 </LinearLayout>
 
 
-    <include layout="@layout/content_transaction"
-        android:id="@+id/layout_trans"/>
+<!--    <include layout="@layout/content_transaction"-->
+<!--        android:id="@+id/layout_trans"/>-->
 
 </layout>
 

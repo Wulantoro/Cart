@@ -1,15 +1,12 @@
 package com.example.pos.Repo
 
-import androidx.databinding.Observable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.LiveDataReactiveStreams
-import com.example.pos.Barang
 import com.example.pos.DAO.KeranjangDao
-import com.example.pos.Model.Keranjang
+import com.example.pos.Keranjang
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import java.util.*
 import javax.inject.Inject
 
 class KeranjangRepository @Inject constructor(
